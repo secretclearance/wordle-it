@@ -23,8 +23,8 @@ randomize(195)
 shuffle(puzzle_list)
 
 let
-  words_as_list = word_list.filterIt(it notin puzzle_list).mapIt(&"\"{it}\"").join(", ")
-  shuffled_as_list = puzzle_list.mapIt(&"\"{it}\"").join(", ")
+  words_as_list = word_list.filterIt(it notin puzzle_list).mapIt(&"\"{it.toLowerAscii}\"").join(", ")
+  shuffled_as_list = puzzle_list.mapIt(&"\"{it.toLowerAscii}\"").join(", ")
 
 # check where is placed yesterday's word
 when defined(findOncia):
